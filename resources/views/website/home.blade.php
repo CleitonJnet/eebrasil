@@ -3,7 +3,7 @@
     <section class="welcome">
         <div class="container">
             <div>
-                <h1 data-aos="fade-down" data-aos-duration="900">Juntos na Grande Comissão</h1>
+                <h1 data-aos="fade-down" data-aos-duration="900">Juntos na Grande Comissão. test</h1>
                 <p data-aos="fade-up" data-aos-duration="900">Nossa missão: "Glorificar a Deus treinando crentes de todas as faixas etárias, nas igrejas
                     locais, para evangelização pessoal e discipulado."</p>
             </div>
