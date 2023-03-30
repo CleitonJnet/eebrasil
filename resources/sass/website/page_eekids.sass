@@ -1,0 +1,20 @@
+@use 'variables'
+@use 'mixins'
+
+.page-eekids
+    display: grid
+    column-gap: 40px
+    row-gap: 100px
+    width: 100%
+    grid-template-columns: 1fr 1fr
+    @include mixins.screen768
+        gap: 40px
+        grid-template-columns: 1fr
+
+    .column1
+        display:  flex
+        align-items: center
+        height: 100%
+
+    .column2
+        overflow: hidden

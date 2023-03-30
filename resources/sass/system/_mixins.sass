@@ -1,0 +1,53 @@
+@use 'variables'
+
+@mixin flex-center-center
+    display: flex
+    justify-content: center
+    align-items: center
+
+@mixin flex-between-center
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+@mixin bg-cover-center-center($img)
+    background-image: url('../img/#{$img}')
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center center
+    background-repeat: no-repeat
+
+@mixin bg-cover-top-center($img)
+    background-image: url('../img/#{$img}')
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: top center
+    background-repeat: no-repeat
+
+@mixin screen1014
+    @media(max-width: 1024px)
+        @content
+
+@mixin screen991
+    @media(max-width: 991px)
+        @content
+
+@mixin screen768
+    @media(max-width: 768px)
+        @content
+
+@mixin screen540
+    @media(max-width: 540px)
+        @content
+
+@mixin screen414
+    @media(max-width: 414px)
+        @content
+
+@mixin screen375
+    @media(max-width: 375px)
+        @content
+
+@mixin screen320
+    @media(max-width: 320px)
+        @content

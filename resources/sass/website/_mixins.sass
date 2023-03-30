@@ -1,0 +1,84 @@
+@use 'variables'
+
+@mixin flex-center-center
+    display: flex
+    justify-content: center
+    align-items: center
+
+@mixin flex-between-center
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+@mixin bg-cover-center-center($img)
+    background-image: url('../img/#{$img}')
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center center
+
+@mixin bg-cover-top-center($img)
+    background-image: url('../img/#{$img}')
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: top center
+
+@mixin bg-center-center
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: top center
+
+@mixin bg-repeat($img)
+    background-image: url('../img/#{$img}')
+    background-repeat: repeat
+
+@mixin screen1600
+    @media(max-width: 1600px)
+        @content
+
+@mixin screen1450
+    @media(max-width: 1450px)
+        @content
+
+@mixin screen1285
+    @media(max-width: 1285px)
+        @content
+
+@mixin screen991
+    @media(max-width: 991px)
+        @content
+
+@mixin screen850
+    @media(max-width: 850px)
+        @content
+
+@mixin screen768
+    @media(max-width: 768px)
+        @content
+
+@mixin screen660
+    @media(max-width: 660px)
+        @content
+
+@mixin screen600
+    @media(max-width: 600px)
+        @content
+
+@mixin screen540
+    @media(max-width: 540px)
+        @content
+
+@mixin screen470
+    @media(max-width: 470px)
+        @content
+
+@mixin screen414
+    @media(max-width: 414px)
+        @content
+
+@mixin screen375
+    @media(max-width: 375px)
+        @content
+
+@mixin screen320
+    @media(max-width: 320px)
+        @content

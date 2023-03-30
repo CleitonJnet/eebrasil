@@ -1,0 +1,124 @@
+@use 'variables'
+@use 'mixins'
+
+footer
+    width: 100%
+    background-color: #f2f1d7
+    position: relative
+    @include mixins.screen1450
+        padding: 0 5px
+
+    padding: 0 10px
+
+    .footer-globe-ee-svg
+        position: absolute
+        top: -50px
+        left: -50px
+        height: 150%
+        fill: #fff
+        opacity: 20%
+        -webkit-filter: drop-shadow(0px 0px 10px rgba(89 42 5 / 70%))
+        filter: drop-shadow(0px 0px 10px rgba(89 42 5 / 70%))
+
+    .content
+        min-height: 500px
+        background-color: rgba(255, 255, 255, .75)
+        border-radius: 40px 40px 0 0
+        border-top: 4px solid #592a05
+        border-left: 15px solid #592a05
+        border-right: 15px solid #592a05
+        overflow: hidden
+        display: grid
+        grid-template-columns: 7fr 4fr 7fr
+        gap: 30px
+        padding: 30px
+        @include mixins.screen850
+            grid-template-columns: 1fr 1fr
+        @include mixins.screen600
+            grid-template-columns: 1fr
+            gap: 0
+
+        h2
+            color: #592a05
+            font-family: 'cinzel', cursive
+            font-size: 1.4rem
+            padding: 80px 0 7px
+            margin-bottom: 20px
+            border-bottom: 2px solid #d9d8be
+
+        .column1
+            text-align: justify
+            font-size: 1.35rem
+            font-family: 'Forum', cursive
+            color: #592a05
+            line-height: 30px
+            img
+                height: 100px
+                display: block
+                margin: 30px auto
+
+        .column2
+            padding-bottom: 30px
+            ul
+                li
+                    padding: 7px 5px
+
+                li::before
+                    content: '\00BB'
+                    padding-left: 20px
+                    padding-right: 5px
+
+        .column3
+            line-height: 28px
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+            padding-bottom: 30px
+
+            div:nth-child(2)
+                font-size: 1rem
+                font-weight: 700
+
+            div:nth-child(3)
+                font-size: 0.9rem
+                font-weight: 700
+
+    #copyright
+        background-color: #252525
+        padding: 3px 0
+        position: absolute
+        left: 0
+        bottom: 0
+        width: 100%
+        overflow: auto
+
+        > div
+            @include mixins.flex-between-center
+            color: #5e5e5e
+            cursor: default
+            white-space: nowrap
+            width: 100%
+            min-width: 580px
+
+            span
+                @include mixins.flex-center-center
+                color: #777
+                transition: color 200ms
+                font-size: 10pt
+
+            a
+                @include mixins.flex-center-center
+                color: #777
+                transition: color 200ms
+                font-size: 10pt
+
+            a:hover
+                color: #ffffff
+
+            a:first-child
+                .development
+                    line-height: 10pt
+                    font-weight: 500
+
+                    div
+                        font-weight: 200
+                        letter-spacing: 1.2px
+                        font-size: 8pt

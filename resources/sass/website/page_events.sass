@@ -1,0 +1,134 @@
+@use 'variables'
+@use 'mixins'
+
+.list-events
+    display: grid
+    // Quando programar o backend posso ajustar melhor o conteúdo
+    // de acordo com a quantidade de eventos
+    grid-template-columns: repeat(4, 1fr)
+    @include mixins.screen1285
+        grid-template-columns: repeat(2, 1fr)
+    @include mixins.screen991
+        grid-template-columns: repeat(3, 1fr)
+    @include mixins.screen850
+        grid-template-columns: repeat(2, 1fr)
+    @include mixins.screen470
+        grid-template-columns: 1fr
+    gap: 20px
+
+    .event-item
+        height: 400px
+        overflow: hidden
+        border-radius: 10px
+        box-shadow: 0 0 5px 2px rgb(30, 15, 4, .5)
+        backdrop-filter: blur(6.5px)
+        background: rgb(242,241,215)
+        background: -moz-linear-gradient(180deg, rgba(242,241,215,1) 50%, rgba(255,255,255,1) 100%)
+        background: -webkit-linear-gradient(180deg, rgba(242,241,215,1) 50%, rgba(255,255,255,1) 100%)
+        background: linear-gradient(180deg, rgba(242,241,215,1) 50%, rgba(255,255,255,1) 100%)
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f2f1d7",endColorstr="#ffffff",GradientType=1)
+        display: block
+
+        .inscription
+            height: 30px
+            width: 200px
+            display: flex
+            justify-content: center
+            align-items: center
+            transform: rotateZ(45deg)
+            position: absolute
+            top: 40px
+            right: -50px
+            background-color: gold
+            box-shadow: 0 0 10px 5px rgba(#000 , .75)
+
+        .event-banner::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            height: 100%
+            width: 100%
+            backdrop-filter: blur(2px)
+
+        .event-banner
+            height: 200px
+            background-size: cover
+            background-position: center
+            background-repeat: no-repeat
+            display: flex
+            justify-content: center
+            align-items: center
+
+            .event-logo
+                max-height: 150px
+                max-width: 100%
+                padding: 0 10px
+
+            .svg-banner-event
+                position: absolute
+                bottom: 0
+                left: 0
+                fill: #F2F1D7
+
+        .event-info
+            height: calc( 100% - 200px )
+            padding: 10px
+            text-align: center
+
+            .event-title-date
+                display: flex
+                justify-content: space-around
+                align-items: center
+                flex-direction: column
+                height: calc( 100% - 45px )
+
+                .event-title
+                    font-size: 1.2rem
+                    font-family: 'Cinzel', serif
+
+                .event-date
+                    font-size: 1.4rem
+                    font-family: 'Passion One', cursive
+                    color: #592a05
+
+            .event-church
+                position: absolute
+                bottom: 0
+                left: 0
+                width: 100%
+                height: 45px
+                display: flex
+                justify-content: center
+                align-items: center
+                padding: 5px
+                color: #F2F1D7
+                font-size: .85rem
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+                background-color: rgb(89, 42, 5)
+
+    .event-item:hover
+        .event-details
+            position: absolute
+            top: 0
+            left: 0
+            background-color: rgba(0, 0, 0, .7)
+            backdrop-filter: blur(4px)
+            width: 100%
+            height: 100%
+            transition: 150ms ease-in-out
+            @include mixins.flex-center-center
+            color: #fff
+            text-align: center
+            font-weight: 600
+
+            .more_details
+                padding: 5px 20px
+                color:#592a05
+                background-color: #f2f1d7
+                margin-top: 30px
+                border-radius: 5px
+
+
+
+

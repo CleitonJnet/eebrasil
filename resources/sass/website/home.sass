@@ -1,0 +1,612 @@
+@use 'variables'
+@use 'mixins'
+
+main
+    section:first-child
+        > div
+            padding-top: 80px
+
+    .bloco2
+        .container
+            display: grid
+            grid-template-columns: 1fr 1fr
+            gap: 10px
+
+            @include mixins.screen991
+                padding-top: 40px
+                gap: 0px
+                grid-template-columns: 1fr
+
+            .content_block2
+                display: flex
+                justify-content: center
+                align-items: flex-start
+                flex-direction: column
+
+                h2
+                    text-align: left
+                    font-size: 3rem
+                    font-family: 'Passion One', cursive
+                    color: rgb(89, 42, 5)
+                    padding-bottom: 20px
+
+                p
+                    text-align: justify
+                    font-size: 1.45rem
+                    font-family: 'Forum', cursive
+                    color: rgb(89, 42, 5)
+                    line-height: 32px
+                    padding-bottom: 40px
+
+    .bloco3
+        background-color: rgb(89, 42, 5)
+        padding-bottom: 50px
+
+        .gallery-title
+            top: 70px
+            font-size: 12rem
+            @include mixins.screen1600
+                font-size: 8rem
+            @include mixins.screen991
+                font-size: 5rem
+
+        .globe-ee-svg
+            display: block
+            -webkit-filter: drop-shadow(0px 0px 20px rgba(0 0 0 / 50%))
+            filter: drop-shadow(0px 0px 20px rgba(0 0 0 / 50%))
+            position: absolute
+            bottom: 15px
+            left: -50px
+            max-height: 80%
+            z-index: 0
+            @include mixins.screen991
+                margin: auto
+                left: 0px
+
+        .news
+            display: grid
+            gap: 24px
+            z-index: 999
+            grid-template-columns: 1fr 1fr
+            margin-top: 30px
+            @include mixins.screen991
+                grid-template-columns: 1fr
+
+            .news-actual
+                display: block
+                min-height: 350px
+                height: 100%
+                width: 100%
+                border: 3px solid #F2F1D7
+                border-radius: 10px
+                background-color: white
+                overflow: hidden
+
+                .photos
+                    height: 100%
+                    width: 100%
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    background-color: #000
+
+                    img.selected
+                        display: block
+                        object-fit: cover
+                        max-width: 100%
+                        min-height: 100%
+                        opacity: 1
+
+                    img
+                        display: none
+                        opacity: 0
+                        transition: ease-in-out opacity 1s
+
+                .info
+                    display: none
+
+            .news-actual:hover
+
+                .info
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+                    flex-direction: column
+                    background-color: rgba(0, 0, 0, .7)
+                    height: 100%
+                    width: 100%
+                    position: absolute
+                    top: 0
+                    left: 0
+                    color: #F2F1D7
+                    animation: view_photo 200ms linear both
+                    padding: 20px
+                    text-align: center
+                    backdrop-filter: blur(5px)
+                    opacity: 0
+
+                    hr
+                        border: solid #F2F1D7 1px
+                        border-radius: 5px
+
+                    @keyframes view_photo
+                        from
+                            opacity: 0
+                        to
+                            opacity: 1
+
+                    .info-event
+                        font-weight: 200
+                        font-size: 1.2rem
+                        font-family: 'Forum', cursive
+                        text-transform: uppercase
+
+                    .info-church
+                        font-weight: 400
+                        font-size: 1.2rem
+                        font-family: 'Spectral', serif
+
+                    .info-city-uf
+                        font-weight: 200
+                        font-size: 1rem
+
+            .news-gallery
+                display: grid
+                grid-template-columns: 1fr 1fr
+                gap: 5px
+
+                .paste
+                    display: block
+                    height: 270px
+                    @include mixins.screen991
+                        height: 150px
+                    width: 100%
+                    border: 3px solid #F2F1D7
+                    overflow: hidden
+
+                    .photos
+                        height: 100%
+                        width: 100%
+                        background-color: #000
+
+                        img.selected
+                            display: block
+                            object-fit: cover
+                            max-width: 100%
+                            min-height: 100%
+
+                        img
+                            display: none
+
+                .paste:hover
+
+                    .info
+                        display: flex
+                        justify-content: space-between
+                        align-items: center
+                        flex-direction: column
+                        background-color: rgba(0, 0, 0, .7)
+                        height: 100%
+                        width: 100%
+                        position: absolute
+                        top: 0
+                        left: 0
+                        color: #F2F1D7
+                        animation: view_photo 200ms linear both
+                        padding: 10px
+                        text-align: center
+                        backdrop-filter: blur(5px)
+                        opacity: 0
+
+                        hr
+                            border: solid #F2F1D7 1px
+                            border-radius: 5px
+
+                        @keyframes view_photo
+                            from
+                                opacity: 0
+                            to
+                                opacity: 1
+
+                        .info-event
+                            font-weight: 200
+                            font-size: 1.1rem
+                            font-family: 'Forum', cursive
+                            text-transform: uppercase
+
+                        .info-church
+                            font-weight: 400
+                            font-size: 1rem
+                            font-family: 'Spectral', serif
+
+                        .info-city-uf
+                            font-weight: 200
+                            font-size: .9rem
+
+                .paste:nth-child(1)
+                    border-radius: 10px 0 0 0
+
+                .paste:nth-child(2)
+                    border-radius: 0 10px 0 0
+
+                .paste:nth-child(3)
+                    border-radius: 0 0 0 10px
+
+                .paste:nth-child(4)
+                    border-radius: 0 0 10px 0
+
+    .bloco4
+        @include mixins.bg-repeat('bg_triangle.png')
+        background-color: rgba(black, .75)
+        color: #9b9b9b
+        font-size: 1.45rem
+        font-family: 'Spectral', serif
+        padding: 180px 0
+
+        .principles-title
+            width: 100%
+            text-align: right
+            font-family: 'Rubik Dirt', cursive
+            color: #F2F1D7
+            text-shadow: 1px 1px 1px rgb(30, 15, 4)
+            position: absolute
+            top: -3%
+            right: 1vw
+            z-index: 0
+            opacity: 30%
+            font-size: 12rem
+            @include mixins.screen1285
+                font-size: 9rem
+            @include mixins.screen991
+                opacity: 85%
+                font-size: 4rem
+                top: 40px
+            @include mixins.screen540
+                bottom: -1%
+
+        .container
+            height: 100%
+
+            .principles
+                height: 100%
+                display: grid
+                margin-top: 50px
+                grid-template-columns: 1fr 1fr
+                gap: 2px
+                position: relative
+                overflow: hidden
+                border-radius: 20px
+
+                @include mixins.screen991
+                    margin-top: 0px
+                    grid-template-columns: 1fr
+
+                h3
+                    color: #cecece
+                    font-family: 'Spectral', serif
+                    font-size: 1.5rem
+                    font-weight: 900
+
+                .principles-item-left
+                    height: 100%
+                    display: grid
+                    grid-template-columns: 1fr 7fr
+                    gap: 2px
+                    background-color: rgba(black , .5)
+                    text-align: left
+                    padding: 8% 0.2% 8% 2%
+                    transition: background-color 200ms
+                    @include mixins.screen991
+                        padding: 30px
+                        gap: 20px
+
+                    div
+                        padding-right: 24%
+
+                    div:nth-child(1)
+                        text-align: right
+
+                .principles-item-left:hover
+                        background-color: rgba(0, 0, 0, 1)
+
+                .principles-item-right
+                    height: 100%
+                    display: grid
+                    grid-template-columns: 7fr 1fr
+                    gap: 2px
+                    text-align: right
+                    padding: 8% 2% 8% 0.2%
+                    background-color: rgba(black , .5)
+                    transition: background-color 200ms
+                    @include mixins.screen991
+                        padding: 30px
+                        gap: 20px
+
+                    div
+                        padding-left: 24%
+
+                    div:nth-child(2)
+                        text-align: left
+
+                .principles-item-right:hover
+                        background-color: rgba(0, 0, 0, 1)
+
+                .principles-item-center
+                    position: absolute
+                    top: 0
+                    left: 40%
+                    height: 100%
+                    width: 20%
+                    padding: 4% 0.2%
+                    @include mixins.screen991
+                        position: relative
+                        padding: 0
+                        top: 0
+                        left: 0
+                        width: 100%
+
+                    > div
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        flex-direction: column
+                        background-color: green
+                        height: 100%
+                        width: 100%
+                        border-radius: 15px
+                        @include mixins.bg-repeat('bg_triangle.png')
+                        background-color: #1d1d1d
+                        border: #5a5a5a 1px solid
+                        text-align: center
+                        @include mixins.screen991
+                            border-radius: 0
+                            border: none
+                            padding: 70px 0
+
+                        h3
+                            color: #cecece
+                            font-family: 'Spectral', serif
+                            font-size: 1.5rem
+                            font-weight: 900
+
+                .principles-item-center
+                    div:hover
+                        background-color: rgba(0, 0, 0, 1)
+
+        .principles-svg
+            width: 100%
+            fill: #592A05
+            position: absolute
+            top: 0
+            left: 0
+
+        .svg-events
+            position: absolute
+            bottom: 0
+            left: 0
+            fill: #F2F1D7
+
+    .bloco5
+        padding: 120px 0
+
+        .events-title
+            line-height: 1rem
+            @include mixins.screen1285
+                font-size: 8rem
+            @include mixins.screen991
+                font-size: 6.5rem
+                padding: 80px 0 80px
+            @include mixins.screen850
+                font-size: 5rem
+            @include mixins.screen660
+                font-size: 4rem
+            @include mixins.screen540
+                padding: 1d0px 0 80px
+                font-size: 3.7rem
+            @include mixins.screen470
+                padding: 30px 0 80px
+                font-size: 3rem
+
+        .svg-fish
+            position: absolute
+            bottom: 40px
+            right: 0px
+            width: 40%
+            overflow: hidden
+            padding: 20px 20px 65px 0
+            @include mixins.screen991
+                width: 80%
+
+            > svg
+                fill: #F2F1D7
+                -webkit-filter: drop-shadow(0px 0px 4px #592a05)
+                filter: drop-shadow(0px 0px 4px #592a05)
+                transform: rotateZ(10deg)
+
+        .events
+            display: grid
+            gap: 24px
+            z-index: 999
+            grid-template-columns: 3fr 5fr
+            margin-top: 30px
+            @include mixins.screen991
+                grid-template-columns: 1fr
+
+            .banner-events
+                height: 400px
+                width: 100%
+                border-radius: 10px
+                background-color: white
+                overflow: hidden
+                position: relative
+
+                .event-photo
+                    display: block
+                    min-width: 100%
+                    min-height: 100%
+                    background-size: cover
+                    background-position: center
+                    background-repeat: no-repeat
+                    animation: changePhotoEvent 20s linear infinite
+
+
+                .event-photo::before
+                    content: ''
+                    position: absolute
+                    width: 100%
+                    height: 5px
+                    bottom: 0
+                    left: 0
+                    border-radius: 20px 20px 0 0
+                    background-color: #375207
+                    animation: photoEventProgress 10s linear infinite
+
+                @keyframes photoEventProgress
+                    from
+                        transform: translateX(-100%)
+                    to
+                        transform: translateX(100%)
+
+                @keyframes changePhotoEvent
+                    0%
+                        background-image: url('../img/event-banner1.jpg')
+                    45%
+                        background-image: url('../img/event-banner1.jpg')
+                    50%
+                        background-image: url('../img/event-banner2.jpg')
+                    95%
+                        background-image: url('../img/event-banner2.jpg')
+                    100%
+                        background-image: url('../img/event-banner1.jpg')
+
+            .list-events
+                display: grid
+                // Quando programar o backend posso ajustar melhor o conteúdo
+                // de acordo com a quantidade de eventos
+                grid-template-columns: repeat(3, 1fr)
+                @include mixins.screen1285
+                    grid-template-columns: repeat(2, 1fr)
+                @include mixins.screen991
+                    grid-template-columns: repeat(3, 1fr)
+                @include mixins.screen850
+                    grid-template-columns: repeat(2, 1fr)
+                @include mixins.screen470
+                    grid-template-columns: 1fr
+                gap: 10px
+
+                .event-item
+                    min-height: 400px
+                    overflow: hidden
+                    border-radius: 10px
+                    box-shadow: 0 0 5px 2px rgb(30, 15, 4, .5)
+                    backdrop-filter: blur(6.5px)
+                    background: rgb(242,241,215)
+                    background: -moz-linear-gradient(180deg, rgba(242,241,215,1) 50%, rgba(255,255,255,1) 100%)
+                    background: -webkit-linear-gradient(180deg, rgba(242,241,215,1) 50%, rgba(255,255,255,1) 100%)
+                    background: linear-gradient(180deg, rgba(242,241,215,1) 50%, rgba(255,255,255,1) 100%)
+                    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#f2f1d7",endColorstr="#ffffff",GradientType=1)
+                    display: block
+
+                    .inscription
+                        height: 30px
+                        width: 200px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        transform: rotateZ(45deg)
+                        position: absolute
+                        top: 40px
+                        right: -50px
+                        background-color: gold
+                        box-shadow: 0 0 10px 5px rgba(#000 , .75)
+
+                    .event-banner::before
+                        content: ''
+                        position: absolute
+                        top: 0
+                        left: 0
+                        height: 100%
+                        width: 100%
+                        backdrop-filter: blur(2px)
+
+                    .event-banner
+                        height: 200px
+                        background-size: cover
+                        background-position: center
+                        background-repeat: no-repeat
+                        display: flex
+                        justify-content: center
+                        align-items: center
+
+                        .event-logo
+                            max-height: 150px
+                            max-width: 100%
+                            padding: 0 10px
+
+                        .svg-banner-event
+                            position: absolute
+                            bottom: 0
+                            left: 0
+                            fill: #F2F1D7
+
+                    .event-info
+                        height: calc( 100% - 200px )
+                        padding: 10px
+                        text-align: center
+
+                        .event-title-date
+                            display: flex
+                            justify-content: space-around
+                            align-items: center
+                            flex-direction: column
+                            height: calc( 100% - 45px )
+
+                            .event-title
+                                font-size: 1.2rem
+                                font-family: 'Cinzel', serif
+
+                            .event-date
+                                font-size: 1.4rem
+                                font-family: 'Passion One', cursive
+                                color: #592a05
+
+                        .event-church
+                            position: absolute
+                            bottom: 0
+                            left: 0
+                            width: 100%
+                            height: 45px
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            padding: 5px
+                            color: #F2F1D7
+                            font-size: .85rem
+                            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+                            background-color: rgb(89, 42, 5)
+
+                .event-item:hover
+                    .event-details
+                        position: absolute
+                        top: 0
+                        left: 0
+                        background-color: rgba(0, 0, 0, .7)
+                        backdrop-filter: blur(4px)
+                        width: 100%
+                        height: 100%
+                        transition: 150ms ease-in-out
+                        @include mixins.flex-center-center
+                        color: #fff
+                        text-align: center
+                        font-weight: 600
+
+                        .more_details
+                            padding: 5px 20px
+                            color:#592a05
+                            background-color: #f2f1d7
+                            margin-top: 30px
+                            border-radius: 5px
+
+
+
+

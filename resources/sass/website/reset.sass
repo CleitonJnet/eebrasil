@@ -1,0 +1,98 @@
+@use 'variables'
+@use 'mixins'
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Spectral:ital,wght@1,200&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap')
+
+html, body, div, span, applet, object, iframe, acronym, address, big, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+    margin: 0
+    padding: 0
+    vertical-align: baseline
+    border: 0
+    list-style: none
+    position: relative
+    box-sizing: border-box
+
+section
+    background-color: #F2F1D7
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr
+    text-transform: none
+    text-decoration: none
+    font: inherit
+    font-size: 100%
+    font-family: 'Nunito', sans-serif
+    text-transform: none
+    text-decoration: none
+    color: variables.$text-color
+    box-sizing: border-box
+
+::-webkit-scrollbar
+    width: 10px
+    height: 5px
+    background-color: #F2F1D7
+
+::-webkit-scrollbar-thumb
+    background: #592a05
+    border-radius: 2px
+    width: 10px
+
+.container
+    max-width: variables.$container-width
+    margin: auto
+    padding: 0 10px
+
+.btns-to-session
+    display: flex
+    justify-content: flex-end
+
+    a
+        display: inline-flex
+        padding: 10px 40px
+        background: rgb(55,82,7)
+        background: -moz-linear-gradient(90deg, rgba(55,82,7,1) 50%, rgba(39,57,5,1) 100%)
+        background: -webkit-linear-gradient(90deg, rgba(55,82,7,1) 50%, rgba(39,57,5,1) 100%)
+        background: linear-gradient(90deg, rgba(55,82,7,1) 50%, rgba(39,57,5,1) 100%)
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#375207",endColorstr="#273905",GradientType=1)
+        color: rgba(white, .95)
+        border: none
+        border-radius: 10px
+
+    a:hover
+        background: rgb(39,57,5)
+        background: -moz-linear-gradient(90deg, rgba(39,57,5,1) 50%, rgba(55,82,7,1) 100%)
+        background: -webkit-linear-gradient(90deg, rgba(39,57,5,1) 50%, rgba(55,82,7,1) 100%)
+        background: linear-gradient(90deg, rgba(39,57,5,1) 50%, rgba(55,82,7,1) 100%)
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#273905",endColorstr="#375207",GradientType=1)
+        color: rgba(white, .95)
+        border: none
+        border-radius: 10px
+
+.title-section
+    width: 100%
+    text-align: left
+    font-family: 'Rubik Dirt', cursive
+    color: #F2F1D7
+    text-shadow: 1px 1px 1px rgb(30, 15, 4)
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 0
+    opacity: 85%
+    font-size: 9rem
+    padding: 0 20px
+    @include mixins.screen991
+        font-size: 4rem
+
+.mediaq-none-991
+    @include mixins.screen991
+        display: none
+
+.mediaq-inline-991
+    display: none
+    @include mixins.screen991
+        display: inline

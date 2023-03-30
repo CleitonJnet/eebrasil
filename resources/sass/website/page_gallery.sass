@@ -1,0 +1,96 @@
+@use 'variables'
+@use 'mixins'
+
+.news-gallery
+    display: grid
+    grid-template-columns: repeat(4,1fr)
+    gap: 7px
+    @include mixins.screen991
+        grid-template-columns: repeat(3,1fr)
+    @include mixins.screen768
+        grid-template-columns: repeat(2,1fr)
+    @include mixins.screen470
+        grid-template-columns: 1fr
+
+    .paste
+        display: block
+        height: 250px
+        @include mixins.screen991
+            height: 150px
+        width: 100%
+        border: 3px solid #F2F1D7
+        overflow: hidden
+
+        .photos
+            height: 100%
+            width: 100%
+            background-color: #000
+
+            img
+                display: none
+
+            img.selected
+                display: block
+                object-fit: cover
+                max-width: 100%
+                min-height: 100%
+
+    .paste:hover
+
+        .info
+            display: flex
+            justify-content: space-between
+            align-items: center
+            flex-direction: column
+            background-color: rgba(0, 0, 0, .7)
+            height: 100%
+            width: 100%
+            position: absolute
+            top: 0
+            left: 0
+            color: #F2F1D7
+            animation: view_photo 200ms linear both
+            padding: 10px
+            text-align: center
+            backdrop-filter: blur(5px)
+            opacity: 0
+
+            hr
+                border: solid #F2F1D7 1px
+                border-radius: 5px
+
+            @keyframes view_photo
+                from
+                    opacity: 0
+                to
+                    opacity: 1
+
+            .info-event
+                font-weight: 200
+                font-size: 1.1rem
+                font-family: 'Forum', cursive
+                text-transform: uppercase
+
+            .info-church
+                font-weight: 400
+                font-size: 1rem
+                font-family: 'Spectral', serif
+
+            .info-city-uf
+                font-weight: 200
+                font-size: .9rem
+
+    // .paste:nth-child(1)
+    //     border-radius: 10px 0 0 0
+
+    // .paste:nth-child(2)
+    //     border-radius: 0 10px 0 0
+
+    // .paste:nth-child(3)
+    //     border-radius: 0 0 0 10px
+
+    // .paste:nth-child(4)
+    //     border-radius: 0 0 10px 0
+
+
+

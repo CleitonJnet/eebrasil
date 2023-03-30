@@ -1,0 +1,179 @@
+@use 'variables'
+@use 'mixins'
+
+main
+    section:first-child
+        > div
+            padding-top: 50px
+
+    .wave
+        position: absolute
+        bottom: 0
+        left: 0
+        z-index: 0
+
+    .welcome
+        height: 100vh
+        min-height: 550px
+        width: 100%
+        background-color: beige
+        @include mixins.bg-cover-center-center('background.jpg')
+
+        > div
+            height: 100%
+            @include mixins.flex-center-center
+            flex-direction: column
+
+            > div
+                margin-top: -100px
+                padding: 8%
+                border-radius: 20px
+                @include mixins.flex-center-center
+                flex-direction: column
+                backdrop-filter: blur(20px)
+                box-shadow: 0px 0px 15px 11px rgba(0,0,0,0.2)
+                @include mixins.screen991
+                    padding: 5px
+
+                h1
+                    text-align: center
+                    font-size: 3.7rem
+                    font-family: 'Rubik Dirt', cursive
+                    color: #F2F1D7
+                    text-shadow: 1px 1px 7px #000
+                    line-height: 4.3rem
+                    margin-bottom: 20px
+
+                    @include mixins.screen768
+                        font-size: 3rem
+                        line-height: 3rem
+                        max-width: 95%
+
+                        @include mixins.screen540
+                        font-size: 2.3rem
+
+                    span
+                        white-space: nowrap
+                        @include mixins.screen768
+
+
+                p
+                    font-family: 'Spectral', serif
+                    color: white
+                    font-size: 1.95rem
+                    max-width: 75%
+                    text-align: center
+                    text-shadow: 1px 1px 5px #000
+                    @include mixins.screen540
+                        font-size: 1.7rem
+                        max-width: 85%
+
+    .page-inside
+        height: 450px
+        width: 100%
+        background-color: beige
+        @include mixins.bg-cover-center-center('background.jpg')
+
+        > div
+            height: 100%
+            @include mixins.flex-center-center
+
+        h1
+            font-size: 4rem
+            max-width: 100%
+            text-align: center
+            font-family: 'Rubik Dirt', cursive
+            color: white
+            text-shadow: 1px 1px 5px #000
+            line-height: 4.3rem
+            @include mixins.screen540
+                line-height: 3.3rem
+                font-size: 3.25rem
+            @include mixins.screen375
+                font-size: 2.5rem
+
+    .page
+        background-color: #f2f1d7
+        padding: 20px 0 50px
+        @include mixins.screen1450
+            padding: 20px 5px 50px
+
+        .content
+            background-color: rgba(255, 255, 255, .75)
+            border-radius: 40px
+            border-left: 15px solid #592a05
+            border-right: 15px solid #592a05
+            overflow: hidden
+            padding: 70px 40px 40px
+            min-height: 500px
+
+            p
+                color: #592a05
+                text-align: justify
+                line-height: 24px
+                padding-bottom: 20px
+
+.whatsapp
+    position: fixed
+    bottom: 10px
+    right: 10px
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 18px
+    width: fit-content
+    height: 30px
+    background-color: #40c351
+    border: #fff 2px solid
+    border-radius: 7px
+    font-size: 16px
+    color: #fff
+    animation: modify_btn_wz 1s ease-in-out infinite both
+    z-index: 9999
+
+.whatsapp:hover
+    background-color: #07E676
+    animation: modify_btn_wz 0s
+    text-shadow: 1px 1px 1px #000
+
+.whatsapp img
+    height: 30px
+    margin-right: 5px
+
+@keyframes modify_btn_wz
+    0%
+        transform: scale(1)
+
+    50%
+        transform: scale(1.03)
+
+    100%
+        transform: scale(1)
+
+
+.breadcrumb
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    display: flex
+    align-items: center
+    color: #592a05
+    opacity: 80%
+    background-color: rgba(255, 255, 255, .5)
+    padding: 5px 20px
+    font-family: 'Times New Roman', Times, serif
+    border-bottom: 1px rgba(89, 42, 5, .15) solid
+
+    a
+        font-family: 'Times New Roman', Times, serif
+        color: #592a05
+        svg
+            height: 18px
+
+    .breadcrumb-separator
+        margin: 0 10px
+        font-size: 15px
+
+    a:hover
+        color: #472104
