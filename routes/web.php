@@ -19,6 +19,7 @@ use App\Http\Controllers\System\OjtController;
     Route::get('/ministeries',      [SiteController::class, 'ministeries'])    ->name('ministeries');
     Route::get('/events',           [SiteController::class, 'events'])         ->name('events');
     Route::get('/event/{id}',       [SiteController::class, 'event'])          ->name('event');
+    Route::get('/registration/{id}',[SiteController::class, 'registration'])   ->name('registration');
     Route::get('/eed',              [SiteController::class, 'eed'])            ->name('eed');
     Route::get('/clinic',           [SiteController::class, 'clinic'])         ->name('clinic');
     Route::get('/share-your-faith', [SiteController::class, 'shareyourfaith']) ->name('shareyourfaith');

@@ -43,8 +43,6 @@
                 </div>
                 <ul>
 
-
-
                     @if (session('login-role') == 6)
                     @livewire('system.navigation-teacher')
                     @else
@@ -130,7 +128,6 @@
             {{ $slot }}
         </div>
     </main>
-
 
     <div class="breadcrumb">
         <div class="icontainer">

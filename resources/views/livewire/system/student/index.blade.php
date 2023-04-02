@@ -10,19 +10,19 @@
             </div>
             @endif
             <div>
-                <div class="flex justify-between rounded text-sm p-1 bg-slate-200">
+                <div class="flex justify-between p-1 text-sm rounded bg-slate-200">
                     <div class="font-semibold">Alunos inscritos:</div>
                     <div>{{ $tot_students }}</div>
                 </div>
-                <div class="flex justify-between rounded text-sm p-1">
+                <div class="flex justify-between p-1 text-sm rounded">
                     <div class="font-semibold">Alunos pagantes:</div>
                     <div>{{ $tot_payment }}</div>
                 </div>
-                <div class="flex justify-between rounded text-sm p-1 bg-slate-200">
+                <div class="flex justify-between p-1 text-sm rounded bg-slate-200">
                     <div class="font-semibold">Alunos receberam kits:</div>
                     <div>{{ $tot_kit }}</div>
                 </div>
-                <div class="flex justify-between rounded text-sm p-1">
+                <div class="flex justify-between p-1 text-sm rounded">
                     <div class="font-semibold">Alunos finalizaram o curso:</div>
                     <div>{{ $tot_accredited }}</div>
                 </div>

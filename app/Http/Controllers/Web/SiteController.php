@@ -69,6 +69,9 @@ class SiteController extends Controller
 
         return view('website.event',compact('training','time','workload','days'));
     }
+    public function registration($id){
+        return view('website.registration', ['training' => Training::find($id)]);
+    }
     public function clinic(){
         return view('website.ministery-clinic');
     }

@@ -3,7 +3,7 @@
     <x-slot name="breadcrumb">
         <a href="{{ route('events') }}">Treinamentos</a>
         <span class="breadcrumb-separator">&#8250;</span>
-        <span>Evento</span>
+        <span>{{ $training->course->name }}</span>
     </x-slot>
 
     <div class="page-event">
@@ -66,6 +66,9 @@
 
             @endif
 
+            <div>
+                <a href="{{ route('registration',$training->id) }}">inscreva-se neste evento</a>
+            </div>
         </div>
 
     </div>

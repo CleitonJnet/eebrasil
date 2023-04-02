@@ -31,15 +31,19 @@
         <meta name="msapplication-TileImage" content="{{ asset('img/favicon/ms-icon-144x144.png') }}">
         <meta name="theme-color" content="#ffffff">
 
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+
         <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
         <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+        @livewireStyles
 
     </head>
     <body>
 
         {{ $slot }}
 
+        @livewireScripts
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="{{ asset('js/javascript.js') }}"></script>
     </body>
