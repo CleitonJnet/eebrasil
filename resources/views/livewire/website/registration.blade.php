@@ -13,7 +13,7 @@
         @switch($step)
                 @case(1)
                     <x-form.block>
-                        <div class="col-span-full">Digite seu email</div>
+                        <x-form.input.email wire:change='verify_email' wire:keyup='verify_email' iname="email" ilabel="E-mail" :irequired="true" icolspan="12" />
                         <button type="button" style="width: 400px;" class="px-4 py-2 rounded-r-3xl bg-slate-900 text-slate-400" wire:click='defineStep(2)'>Verificar cadastro</button>
                     </x-form.block>
                     @break
