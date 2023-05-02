@@ -4,26 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evangelismo Explosivo</title>
+    <title> Evangelismo Explosivo </title>
 
     {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-    <link rel="stylesheet" href="{{ asset('build/assets/app-c26783b2.css') }}">
+
     @livewireStyles
 
-    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}" />
+    <link rel="stylesheet" href="{{ asset('build/assets/app-efe9de42.css') }}" />
 
     @stack('head')
 
 </head>
 <body>
 
-    <div class="whois-content">
-        <div class="whois">
-            <span> &#171;
-                @if (session('login-role') == 6) Professor @else Escritório @endif
-            &#187;</span>
-        </div>
-    </div>
+    <div class="whois-content"> <div class="whois"> <span> &#171; {{ session('login-role') == 6 ? 'Professor' : 'Escritório' }} &#187;</span> </div> </div>
 
     <header>
         <nav class="navigation">
@@ -31,30 +26,21 @@
                 <a href="{{ route('system.event.index') }}" rel="logomarca" class="brand">
                     <x-icon.logo />
                 </a>
-                <div class="btns">
-                    <a href="/login.html" id="btn-login-0">
-                        <svg class="link-login-devmedia" viewBox="0 0 35 35" xmlns="http://www.w3.org/2000/svg">
-                            <g transform="translate(0)">
-                                <path class="login-usuario" d="M29.874,22.626a17.433,17.433,0,0,0-6.65-4.171,10.117,10.117,0,1,0-11.449,0A17.528,17.528,0,0,0,0,35H2.734a14.766,14.766,0,1,1,29.531,0H35A17.386,17.386,0,0,0,29.874,22.626ZM17.5,17.5a7.383,7.383,0,1,1,7.383-7.383A7.391,7.391,0,0,1,17.5,17.5Z" transform="translate(0)"></path>
-                            </g>
-                        </svg>
-                    </a>
-                    <button class="btn-menu" onclick="show_menu()"><img src="{{ asset('img/menu.png') }}" alt="menu"></button>
-                </div>
-                <ul>
+
+                <div class="flex items-center">
 
                     @if (session('login-role') == 6)
-                    @livewire('system.navigation-teacher')
+                        @livewire('system.navigation-teacher')
                     @else
-                    @livewire('system.navigation-office')
+                        @livewire('system.navigation-office')
                     @endif
 
                     <!-- Authentication -->
                     <form method="POST" action="{{ route('logout') }}" x-data>
                         @csrf
-                        <li id="btn-login-1"><a @click.prevent="$root.submit();" href="{{ route('logout') }}">Sair</a></li>
+                        <div id="btn-login-1"><a class="px-6 py-1 text-sm bg-black hover:bg-black/70 rounded-3xl text-slate-300" @click.prevent="$root.submit();" href="{{ route('logout') }}">Sair</a></div>
                     </form>
-                </ul>
+                </div>
 
             </div>
         </nav>

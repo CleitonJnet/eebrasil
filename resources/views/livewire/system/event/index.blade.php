@@ -8,7 +8,6 @@
         ::-webkit-scrollbar-track{ background: white; border: 2px none rgba(68, 80, 99, 0.5); }
     </style>
 
-    @if (session('login-role') == 6) <x-teacher.events :year="$year" /> @else <x-office.events :year="$year" /> @endif
+    @if (session('login-role') == 6) <x-teacher.events :year="$year" :listActual="$listActual" /> @else <x-office.events :year="$year" :status="$status" /> @endif
 
 </div>
-

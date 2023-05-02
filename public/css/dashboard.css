@@ -112,17 +112,6 @@ header nav.navigation .btns {
   justify-content: center;
   align-items: center;
 }
-header nav.navigation .btns #btn-login-0 {
-  display: none;
-}
-@media (max-width: 768px) {
-  header nav.navigation .btns #btn-login-0 {
-    display: block;
-    height: 25px;
-    width: 25px;
-    margin-right: 10px;
-  }
-}
 header nav.navigation .btn-menu {
   display: none;
 }
@@ -140,27 +129,24 @@ header nav.navigation .btn-menu {
 header nav.navigation .btn-menu img {
   height: 25px;
 }
-header nav.navigation ul {
+header nav.navigation .navigation_main {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-@media (max-width: 768px) {
-  header nav.navigation ul {
-    display: none;
-  }
-}
-header nav.navigation ul li {
-  margin-right: 5px;
+header nav.navigation .navigation_main .item {
+  margin-right: 15px;
   position: relative;
 }
-header nav.navigation ul li a {
+header nav.navigation .navigation_main .item .link {
+  position: relative;
   padding: 4px 14px;
   border-radius: 5px;
   transition: all ease-in-out 200ms;
   font-family: "Nunito", sans-serif;
   font-size: 11pt;
   font-weight: 500;
+  text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -168,12 +154,12 @@ header nav.navigation ul li a {
   opacity: 65%;
 }
 @media (max-width: 768px) {
-  header nav.navigation ul li a {
+  header nav.navigation .navigation_main .item .link {
     margin-right: 0;
   }
 }
-header nav.navigation ul li a .menu-label {
-  display: none;
+header nav.navigation .navigation_main .item .link .menu-label {
+  display: flex;
   font-size: 8pt;
   height: 30px;
   width: 85px;
@@ -184,42 +170,22 @@ header nav.navigation ul li a .menu-label {
   justify-content: center;
   border-radius: 5px;
 }
-header nav.navigation ul li.active a {
+header nav.navigation .navigation_main .item.active .link {
   background-color: rgba(0, 67, 86, 0.7);
   border: beige 2px solid;
   color: rgba(255, 255, 255, 0.95);
   opacity: 100%;
 }
-header nav.navigation ul li.active a .menu-label {
+header nav.navigation .navigation_main .item.active .link .menu-label {
   display: flex;
 }
-header nav.navigation ul li:hover a {
+header nav.navigation .navigation_main .item:hover .link {
   background-color: rgba(0, 67, 86, 0.7);
   color: rgba(255, 255, 255, 0.95);
   opacity: 100%;
 }
-header nav.navigation ul li:hover a .menu-label {
+header nav.navigation .navigation_main .item:hover .link .menu-label {
   display: flex;
-}
-header nav.navigation ul li#btn-login-1 a {
-  background-color: rgba(0, 0, 0, 0.8);
-  font-size: 10pt;
-  font-weight: 300;
-  padding: 5px 28px;
-  border-radius: 25px;
-  color: rgba(255, 255, 255, 0.9);
-  opacity: 1;
-}
-@media (max-width: 768px) {
-  header nav.navigation ul li#btn-login-1 a {
-    display: none;
-  }
-}
-header nav.navigation ul li#btn-login-1:hover a {
-  background-color: black;
-}
-header nav.navigation ul li#btn-login-1 {
-  margin-right: 0px;
 }
 @media (max-width: 768px) {
   header nav.navigation ul.show-menu {
@@ -377,10 +343,10 @@ header.show {
 }
 
 main {
-  padding-top: 165px;
-  min-height: calc(100vh - 265px);
+  padding-top: 140px;
   width: 100%;
   height: 100%;
+  min-height: calc(100vh - 200px);
   flex-direction: column;
 }
 

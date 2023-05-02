@@ -12,14 +12,16 @@ class Events extends Component
 {
     public $trainings;
     public $year;
+    public $status;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($year)
+    public function __construct($year,$status)
     {
+        $this->status = $status;
         $this->year = $year;
 
         if($this->year != 'all'){
@@ -50,7 +52,6 @@ class Events extends Component
             ->orderBy('name')->get();
         }else{
 
-            // dd($this->year);
             // Lista usuários que tem algum treinamento cadastrado para eles como professores
             $teachers = User::whereIn('id', function ($query) {
                 $query->select('user_id')->from('trainings')->groupBy('user_id')->havingRaw('COUNT(*) > 0');
@@ -65,10 +66,17 @@ class Events extends Component
 
         }
 
+        if($this->year == 'all'){
+            $trainings_ = Training::where('status',$this->status)->orderBy('date', $this->status == 3 ? 'desc' : 'asc')->paginate(6);
+        }else{
+            $trainings_ = Training::where('status',$this->status)->whereYear('date',$this->year)->orderBy('date', $this->status == 3 ? 'desc' : 'asc')->paginate(6);
+        }
+
         return view('components.office.events',[
             'courses' => Course::where('execution','EE-certified Teacher')->orderBy('ministry_id')->get(),
             'teachers' => $teachers,
-            'listTeachers' => Role::find(6)->users()->orderBy('name')->SimplePaginate( $perPage = 10, $columns = ['*'], $pageName = "ListTeachers" )
+            'trainings_' => $trainings_,
+            'listTeachers' => Role::find(6)->users()->orderBy('name')->SimplePaginate( $perPage = 4, $columns = ['*'], $pageName = "ListTeachers" )
         ]);
     }
 }

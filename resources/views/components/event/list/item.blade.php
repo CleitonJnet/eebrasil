@@ -1,6 +1,8 @@
 <div>
+
+    @if (session('login-role' == 6))
     @if($events_plan->count()>0)
-    <div class="text-sm" style="color: rgba(0,0,0,.5); text-shadow: 0px 0px 1px {{ $course->color }}; font-weight: 100; padding: 10px 0 1px; margin-bottom: 7px; border-bottom: solid 1px {{ $course->color }};">Eventos sendo planejados</div>
+    <div class="text-sm" style="color: rgba(0,0,0,.5); text-shadow: 0px 0px 1px {{ $course->color }}; font-weight: 700; padding: 10px 0 1px; margin-bottom: 7px; border-bottom: solid 1px {{ $course->color }};">Eventos sendo planejados</div>
     @endif
 
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%; margin-bottom: 5px;">
@@ -37,16 +39,17 @@
 
     </div>
     <div>{{$events_plan->links()}}</div>
+    @endif
 
 
     @if($events_confirmed->count()>0)
-    <div class="text-sm" style="color: rgba(0,0,0,.5); text-shadow: 0px 0px 1px {{ $course->color }}; font-weight: 100; padding: 10px 0 1px; margin-bottom: 7px; border-bottom: solid 1px {{ $course->color }}">Eventos Confirmados</div>
+    <div class="text-sm" style="color: rgba(0,0,0,.5); text-shadow: 0px 0px 1px {{ $course->color }}; font-weight: 700; padding: 10px 0 1px; margin-bottom: 7px; border-bottom: solid 1px {{ $course->color }}">Eventos Confirmados</div>
     @endif
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%; margin-bottom: 5px;">
 
         @foreach ($events_confirmed as $event)
 
-        <a href="{{route('system.event.view',$event->id)}}" class="event_item" style="background-color: #f0f0f0; color: #004356; box-shadow: 0 0 2px 2px #004356; border-radius: 2px; overflow: hidden; position: relative; @if($event->date<NOW()) opacity: .8 @endif">
+        <a href="{{route('system.event.view',$event->id)}}" class="event_item" style="background-color: #f0f0f0; color: #004356; box-shadow: 0 0 2px 2px @if($event->date < date('Y-m-d')) #ff0000 @else #004356 @endif; border-radius: 2px; overflow: hidden; position: relative; @if($event->date<NOW()) opacity: .8 @endif">
 
             <div style="padding: 10px; border-left: solid 1px #004356; background-color: rgba(166, 249, 221,.35)">
                 <div style="line-height: 12pt; font-size: 10pt; font-weight: 700;" class="truncate" title="{{$event->church->name}}">&#9962; {{$event->church->name}}</div>
@@ -79,7 +82,7 @@
 
 
     @if($events_done->count()>0)
-    <div class="text-sm" style="color: rgba(0,0,0,.5); text-shadow: 0px 0px 1px {{ $course->color }}; font-weight: 100; padding: 10px 0 1px; margin-bottom: 7px; border-bottom: solid 1px {{ $course->color }}">Eventos Finalizados</div>
+    <div class="text-sm" style="color: rgba(0,0,0,.5); text-shadow: 0px 0px 1px {{ $course->color }}; font-weight: 700; padding: 10px 0 1px; margin-bottom: 7px; border-bottom: solid 1px {{ $course->color }}">Eventos Finalizados</div>
     @endif
     <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; width: 100%; margin-bottom: 5px;">
 

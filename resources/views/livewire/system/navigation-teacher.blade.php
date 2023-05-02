@@ -1,4 +1,4 @@
-<div class="px-4">
+<ul class="px-4">
     <li class="@if(request()->routeIs('system.event.*')) active @endif"><a href="{{ route('system.event.index') }}">
         <x-icon.event />
         <span class="menu-label">Eventos</span>
@@ -15,4 +15,4 @@
         <x-icon.ministery />
         <span class="menu-label">Ministérios</span>
     </a></li> --}}
-</div>
+</ul>

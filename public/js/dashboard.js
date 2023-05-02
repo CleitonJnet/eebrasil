@@ -33,3 +33,4 @@ input_search.onkeyup = function() {
   if (input_search.value.length >= 1)
   { search_content.style.display = 'block' }else{ search_content.style.display = 'none' }
 }
+
