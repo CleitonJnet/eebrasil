@@ -61,7 +61,7 @@
                 <input type="text" class="input-search" placeholder="Buscar...">
 
                 <!-- Conteúdo da busca -->
-                <div class="search-content">
+                {{-- <div class="search-content">
                     <div class="search-items">
                         <div class="items people">
                             <div class="title">Pessoas:</div>
@@ -100,7 +100,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
 
             </div>
@@ -122,7 +122,9 @@
     </div>
 
     @livewireScripts
+
     <script src="{{ asset('js/dashboard.js') }}"></script>
+    @stack('scripts')
     {{-- <script src="{{ asset('build/assets/app-4d2b66eb.js') }}"></script> --}}
 </body>
 </html>
