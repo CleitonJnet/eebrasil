@@ -29,6 +29,7 @@ use App\Http\Controllers\System\OjtController;
 
 Route::prefix('system')->name('system.')->middleware([ 'auth:sanctum', config('jetstream.auth_session'), 'verified' ])->group(function () {
     Route::prefix('event')->name('event.')->group(function(){
+        Route::get('report/{year?}', [EventController::class,'report' ] )->name('report');
         Route::get('index/{year?}', [EventController::class,'index' ] )->name('index');
         Route::get('create',  [EventController::class,'create'  ] )->name('create');
         Route::get('view/{id}',  [EventController::class,'view'  ] )->name('view');

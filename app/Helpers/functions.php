@@ -36,20 +36,26 @@ function workload_lot($times){
     return $data;
 }
 
-function mask($mask,$str){
-    if($str !== '' && $str !== null) {
-        $str = str_replace(" ","",$str);
-        $str = str_replace("-","",$str);
-        $str = str_replace('(',"",$str);
-        $str = str_replace(')',"",$str);
+// function mask($mask,$str){
+//     if($str !== '' && $str !== null) {
 
-        for($i=0;$i<strlen($str);$i++){
-            $mask[strpos($mask,"#")] = $str[$i];
-        }
-    }else{ $mask = null;}
+//         preg_replace("/[^0-9]/", "", $str);
 
-    return $mask;
-}
+//         $size = strlen($str);
+//         $j = 0;
+
+//         for($i = 0; $i < $size; $i++){
+//             if (strpos($mask, "#") !== false) {
+//                 $mask[$j] = $str[$i];
+//                 $j++;
+//             }
+//         }
+
+//     }else{ $mask = null;}
+
+//     // dd($str);
+//     return $mask;
+// }
 
 function rem_char($data){
     if($data !== '' && $data !== null) {
@@ -61,22 +67,41 @@ function rem_char($data){
     return $data;
 }
 
-function telep($phone){
+function telep($telefone) {
 
-    if(strlen($phone)==11){
-        $tel = mask('## #####-####',$phone);
-    }elseif(strlen($phone)==10){
-        $tel = mask('## ####-####',$phone);
-    }elseif(strlen($phone)==9){
-        $tel = mask('#####-####',$phone);
-    }elseif(strlen($phone)==8){
-        $tel = mask('####-####',$phone);
-    }else{
-        $tel = mask('## #####-####',$phone);
+    // Remove tudo o que não for número
+    $telefone = preg_replace("/[^0-9]/", "", $telefone);
+
+    // Verifica o tamanho da string
+    $tamanho = strlen($telefone);
+
+    // Formata o telefone de acordo com o tamanho
+    switch ($tamanho) {
+      case 8:
+        // Formato para 8 dígitos: 1234-5678
+        $telefone = substr($telefone, 0, 4) . "-" . substr($telefone, 4, 4);
+        break;
+      case 9:
+        // Formato para 9 dígitos: 91234-5678
+        $telefone = substr($telefone, 0, 5) . "-" . substr($telefone, 5, 4);
+        break;
+      case 10:
+        // Formato para 10 dígitos: (12) 1234-5678
+        $telefone = "(" . substr($telefone, 0, 2) . ") " . substr($telefone, 2, 4) . "-" . substr($telefone, 6, 4);
+        break;
+      case 11:
+        // Formato para 11 dígitos: (12) 91234-5678
+        $telefone = "(" . substr($telefone, 0, 2) . ") " . substr($telefone, 2, 5) . "-" . substr($telefone, 7, 4);
+        break;
+      default:
+        // Telefone inválido
+        $telefone = "Telefone inválido";
+        break;
     }
 
-    return $tel;
-}
+    return $telefone;
+
+  }
 
 function event_sts($status, $date = null){
     switch ($status) {
@@ -120,7 +145,15 @@ function day_month($date){
 }
 
 function address($street, $number, $complement, $neighborhood, $city, $state, $zipcode){
-    $zipcode = mask("#####-###",$zipcode);
+    $cep = $zipcode;
+    $mascara = "{{xxxxx}}-{{xxx}}";
+
+    $cep_formatado = $mascara;
+    $cep_formatado = str_replace("{{xxxxx}}", substr($cep, 0, 5), $cep_formatado);
+    $cep_formatado = str_replace("{{xxx}}", substr($cep, 5, 3), $cep_formatado);
+
+    $zipcode = $cep_formatado;
+
 
     if($number       !== '' && $number       !== null) { $number       = ', '.$number       ;}
     if($complement   !== '' && $complement   !== null) { $complement   = ', '.$complement   ;}

@@ -4,7 +4,7 @@
         Cadastrar Evento
     </x-slot>
     <x-slot name="hmenu">
-        <li><a href="{{ route('system.event.index') }}">LISTAR TODOS</a></li>
+        <li><a href="{{ route('system.event.index') }}">TODOS OS EVENTOS</a></li>
     </x-slot>
 
     <livewire:system.event.create />

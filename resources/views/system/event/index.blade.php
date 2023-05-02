@@ -13,6 +13,7 @@
     </x-slot>
     <x-slot name="hmenu">
         <li><a href="{{ route('system.event.create') }}">ADICIONAR EVENTO</a></li>
+        <li><a href="{{ route('system.event.report') }}">RELATÓRIO</a></li>
     </x-slot>
 
     <livewire:system.event.index :year="$year" />

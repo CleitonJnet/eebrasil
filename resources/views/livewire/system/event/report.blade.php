@@ -21,7 +21,7 @@
 
             @php $training = $trainings->where('user_id',$teacher->id); @endphp
 
-            <a href="#{{ explode(' ',$teacher->name)[0] }}" class="block px-1 mb-4"style="max-height: calc( 100vh - 200px ); overflow: auto;">
+            <div class="block px-1 mb-4"style="max-height: calc( 100vh - 200px ); overflow: auto;">
                 <div class="flex items-center justify-between col-span-3 px-2 transition rounded-t text-slate-400 bg-slate-700 hover:text-slate-50">
                     <div class="text-sm font-semibold text-white">{{ (explode(' ',$teacher->name))[0] }}:</div>
                     <div class="flex items-center"><span class="text-slate-500">|</span>
@@ -55,7 +55,7 @@
                     </div>
                     @endforeach
                 </div>
-            </a>
+            </div>
 
             @endforeach
 
@@ -64,7 +64,7 @@
 
     </div>
 
-    <div>
+    {{-- <div>
 
         <div class="flex items-center justify-between px-4 py-2 text-white rounded-t-lg bg-slate-600">
             <div>Lista por <span class="text-slate-300">@if (session('modeList') == 0) eventos @else professores @endif</span></div>
@@ -171,7 +171,7 @@
 
         @endif
 
-    </div>
+    </div> --}}
 
 
 </div>

@@ -17,10 +17,10 @@
         ) active @endif">
         <div class="link">
             <x-icon.menu />
-            <span class="menu-label">Cadastro &#9662;</span>
+            <span class="truncate menu-label">Cadastro&#9662;</span>
         </div>
-        <div class="left-0 hidden group-hover:block">
-            <div class="absolute grid gap-1 p-1 mt-5 text-left rounded-md shadow-md bg-black/80">
+        <div class="hidden group-hover:block">
+            <div class="absolute right-0 grid gap-1 p-1 mt-5 text-left rounded-md shadow-md bg-black/80">
                 <a class="block px-4 py-2 text-xs text-center text-white rounded-md bg-sky-600 hover:bg-sky-700" href="{{ route('system.people.index') }}">Pessoas</a>
                 <a class="block px-4 py-2 text-xs text-center text-white rounded-md bg-sky-600 hover:bg-sky-700" href="{{ route('system.church.index') }}">Igrejas</a>
                 <a class="block px-4 py-2 text-xs text-center text-white rounded-md bg-sky-600 hover:bg-sky-700" href="{{ route('system.ministery.index') }}">Ministérios</a>

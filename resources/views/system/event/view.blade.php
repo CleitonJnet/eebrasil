@@ -4,7 +4,7 @@
         Informações do Evento
     </x-slot>
     <x-slot name="hmenu">
-        <li><a href="{{ route('system.event.index') }}">LISTAR TODOS</a></li>
+        <li><a href="{{ route('system.event.index') }}">TODOS OS EVENTOS</a></li>
         @if(session('login-role') == 6)<li><a href="{{ route('system.event.edit',$id) }}">EDITAR</a></li>@endif
     </x-slot>
 

@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Evangelismo Explosivo </title>
 
-    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     @livewireStyles
 
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}" />
-    <link rel="stylesheet" href="{{ asset('build/assets/app-efe9de42.css') }}" />
+    {{-- <link rel="stylesheet" href="{{ asset('build/assets/app-efe9de42.css') }}" /> --}}
 
     @stack('head')
 
@@ -123,6 +123,6 @@
 
     @livewireScripts
     <script src="{{ asset('js/dashboard.js') }}"></script>
-    <script src="{{ asset('build/assets/app-4d2b66eb.js') }}"></script>
+    {{-- <script src="{{ asset('build/assets/app-4d2b66eb.js') }}"></script> --}}
 </body>
 </html>
